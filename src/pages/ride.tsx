@@ -1,8 +1,8 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Loader } from '@googlemaps/js-api-loader'
-import { Car, Bike, Package, Clock, MapPin, Navigation, CreditCard, Wallet, Phone, AlertCircle } from 'lucide-react'
+import { Loader as GoogleMapsLoader } from '@googlemaps/js-api-loader'
+import { Car, Bike, Package, Clock, MapPin, Navigation, CreditCard, Wallet, Phone, AlertCircle, Loader } from 'lucide-react'
 import { Button } from '../components/ui/button'
 import { Card, CardContent } from '../components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
@@ -78,7 +78,7 @@ const RidePage = () => {
     const initMap = async () => {
       try {
         // In a real app, you would use your actual API key
-        const loader = new Loader({
+        const loader = new GoogleMapsLoader({
           apiKey: 'GOOGLE_MAPS_API_KEY_PLACEHOLDER',
           version: 'weekly',
         })
